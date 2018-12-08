@@ -1,5 +1,6 @@
 (ns advent.two
   (:require [advent.utils.input :as io]
+            [advent.utils.map-update :refer [update-map]]
             [clojure.test :refer :all]))
 
 (def input (io/read-input "two.input"))
@@ -21,13 +22,6 @@
    "fguij"
    "axcye"
    "wvxyz"])
-
-(defn update-map [f m]
-  (reduce-kv
-    (fn [m k v]
-      (assoc m k (f v)))
-    {}
-    m))
 
 (def interesting-keys #{3 2})
 
